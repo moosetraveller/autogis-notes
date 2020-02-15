@@ -189,7 +189,53 @@ Download OSGeo4W Network Installer (64 bit) and install the tools with the Expre
 - https://qgis.org/en/site/forusers/download.html
 
 ## Prepare Conda Environment
+### Setup Base Environment
 Open the Anaconda Prompt (via Start Menu) and use following commands:
-```cmd
-
+```shell
+cd ~
+conda config
+conda config --add channels defaults
+conda install geopandas jupyterlab
 ```
+### Setup GIS Environment
+```shell
+conda create -n gis python=3.7
+conda activate gis
+
+conda install jupyterlab
+conda install gdal
+
+conda install geopandas matplotlib mapclassify
+conda install -c conda-forge geojson contextily folium mplleaflet osmnx
+conda install pysal rasterio
+conda install dill
+conda install -c conda-forge geoplot rasterstats
+
+pip install urbanaccess pandana
+pip install dash==0.19.0
+pip install dash-renderer==0.11.1
+pip install dash-html-components==0.8.0
+pip install dash-core-components==0.14.0
+pip install plotly --upgrade
+```
+#### Test Environment
+```shell
+python -c 'import gdal; print(dir(gdal))'
+```
+There should be also no error occuring when executing:
+```python
+import geopandas as gpd
+import pysal
+import cartopy
+import geoplot
+import osmnx
+import folium
+import dash
+import rasterio
+import osmnx
+import contextily
+```
+
+### Sources
+- https://automating-gis-processes.github.io/site/course-info/Installing_Anacondas_GIS.html
+- https://github.com/ContinuumIO/anaconda-issues/issues/10351#issuecomment-528378258 
