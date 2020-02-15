@@ -1,12 +1,15 @@
-## Setup a GIS Environment on Linux
-- https://github.com/moosetraveller/gis-test-env#setup-on-linux
+## Setup a GIS Environment on Ubuntu Linux
+- https://github.com/moosetraveller/gis-test-env#setup-on-ubuntu-linux
 
 ## Setup a GIS Environment on Windows:
 - https://github.com/moosetraveller/gis-test-env#setup-on-windows
 
+## Setup a GIS Environment on Mac OS:
+- https://github.com/moosetraveller/gis-test-env#setup-on-macos
+
 ----
 
-# Setup on Linux
+# Setup on Ubuntu Linux
 Note: This tutorial uses an older Ubuntu version. Use this tutorial at your own risk.
 ## Install Ubuntu 18.04
 ### Virtual Box
@@ -105,6 +108,7 @@ sudo apt-get install qgis qgis-plugin-grass
 ### Setup Base Environment
 ```shell
 cd ~
+rm .condarc
 conda config
 conda config --add channels defaults
 conda install geopandas jupyterlab
@@ -202,6 +206,8 @@ Add New Server
 - https://computingforgeeks.com/how-to-install-pgadmin-4-on-ubuntu
 - https://stackoverflow.com/a/12721020/42659
 
+----
+
 # Setup on Windows
 ## Install Python
 Download Python 3.7.6 from the internet and install Python to `c:\apps\python-3.7.6`. 
@@ -268,6 +274,99 @@ conda config --add channels defaults
 conda install geopandas jupyterlab
 ```
 ### Setup GIS Environment
+```shell
+conda create -n gis python=3.7
+conda activate gis
+
+conda install jupyterlab
+conda install gdal
+
+conda install geopandas matplotlib mapclassify
+conda install -c conda-forge geojson contextily folium mplleaflet osmnx
+conda install pysal rasterio
+conda install dill
+conda install -c conda-forge geoplot rasterstats
+
+conda install psycopg2
+conda install sqlalchemy
+conda install -c conda-forge geoalchemy2
+
+pip install urbanaccess pandana
+pip install dash==0.19.0
+pip install dash-renderer==0.11.1
+pip install dash-html-components==0.8.0
+pip install dash-core-components==0.14.0
+pip install plotly --upgrade
+```
+#### Test Environment
+```shell
+python -c 'import gdal; print(dir(gdal))'
+```
+There should be also no error occuring when executing:
+```python
+import geopandas as gpd
+import pysal
+import cartopy
+import geoplot
+import osmnx
+import folium
+import dash
+import rasterio
+import osmnx
+import contextily
+import psycopg2
+import sqlalchemy
+import geoalchemy2
+```
+
+### Sources
+- https://automating-gis-processes.github.io/site/course-info/Installing_Anacondas_GIS.html
+- https://github.com/ContinuumIO/anaconda-issues/issues/10351#issuecomment-528378258 
+
+----
+
+# Setup on MacOS
+## Install Anaconda
+Change to your console and type:
+```shell
+cd ~/Downloads
+wget https://repo.anaconda.com/archive/Anaconda3-2019.10-MacOSX-x86_64.sh
+bash Anaconda3-2019.10-MacOSX-x86_64.sh
+```
+Follow the instructions and install Anaconda to `~/anaconda3`. If you are asked to initialize Conda do it. After the installation you need to restart your console.
+
+Check Conda with:
+```shell
+conda --version
+```
+
+Sources:
+- https://www.anaconda.com
+
+## Install PyCharm for Anaconda
+Note: You will need a licence for PyCharm. If you are student, sign up for the GitHub Student Pack and get a free Education licence.
+```shell
+cd ~/Downloads
+wget https://download.jetbrains.com/python/pycharm-professional-anaconda-2019.3.3.dmg
+```
+
+Change in Finder to your `~/Downloads` and install Pycharm for Anaconda.
+
+### Sources
+- https://www.jetbrains.com/pycharm/promo/anaconda
+- https://www.jetbrains.com/help/pycharm/installation-guide.html
+- https://education.github.com/pack
+
+## Prepare Conda Environment
+### Setup Base Environment
+```shell
+cd ~
+rm .condarc
+conda config
+conda config --add channels defaults
+conda install geopandas jupyterlab
+```
+### Setup GIS Environment
 ```shell
 conda create -n gis python=3.7
 conda activate gis
