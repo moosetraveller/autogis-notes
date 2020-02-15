@@ -1,5 +1,5 @@
 # Setup on Linux
-Note: This tutorial uses an older Ubuntu version. Use this tutorial on your own risk.
+Note: This tutorial uses an older Ubuntu version. Use this tutorial at your own risk.
 ## Install Ubuntu 18.04
 ### Virtual Box
 - https://www.virtualbox.org
