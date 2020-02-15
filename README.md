@@ -126,4 +126,5 @@ python -c 'import gdal; print(dir(gdal))'
 ```
 
 ### Sources
+- https://automating-gis-processes.github.io/site/course-info/Installing_Anacondas_GIS.html
 - https://github.com/ContinuumIO/anaconda-issues/issues/10351#issuecomment-528378258 
