@@ -13,6 +13,9 @@ Note: This tutorial uses an older Ubuntu version. Use this tutorial at your own 
 - https://www.virtualbox.org
 - https://linuxhint.com/install_ubuntu_18-04_virtualbox
 
+### Parallels
+Note: If you use Parallels on Mac, go to your configuration and disable "Preserve text formatting" in Option/More Options.
+
 ## Install ZSH Console (optional)
 - https://kifarunix.com/how-to-install-and-setup-zsh-and-oh-my-zsh-on-ubuntu-18-04/
 
