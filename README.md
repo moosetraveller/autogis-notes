@@ -149,6 +149,22 @@ import contextily
 - https://automating-gis-processes.github.io/site/course-info/Installing_Anacondas_GIS.html
 - https://github.com/ContinuumIO/anaconda-issues/issues/10351#issuecomment-528378258 
 
+## Install PosgreSQL/PostGIS
+```shell
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+sudo apt-get install postgis
+
+sudo -u postgres createuser gisuser
+sudo -u postgres createdb --encoding=UTF8 --owner=gisuser gis
+sudo -u postgres psql --username=postgres --dbname=gis -c "CREATE EXTENSION postgis;"
+sudo -u postgres psql --username=postgres --dbname=gis -c "CREATE EXTENSION postgis_topology;"
+```
+
+### Sources
+- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
+- https://wiki.openstreetmap.org/wiki/PostGIS/Installation
+
 # Setup on Windows
 ## Install Python
 Download Python 3.7.6 from the internet and install Python to `c:\apps\python-3.7.6`. 
