@@ -1,7 +1,7 @@
-## Setup on Linux
+## Setup a GIS Environment on Linux
 - https://github.com/moosetraveller/gis-test-env#setup-on-linux
 
-## Setup on Windows:
+## Setup a GIS Environment on Windows:
 - https://github.com/moosetraveller/gis-test-env#setup-on-windows
 
 ----
