@@ -1,4 +1,5 @@
 # Setup Linux
+Note: This tutorial uses an older Ubuntu version. Use this tutorial on your own risk.
 ## Install Ubuntu 18.04
 ### Virtual Box
 - https://www.virtualbox.org
@@ -73,3 +74,56 @@ Test R with: `sudo -i R`.
 
 ### Sources
 - https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04
+
+## Install QGIS
+Add following lines to `/etc/apt/sources.list`:
+```shell
+deb     https://qgis.org/debian bionic main
+deb-src https://qgis.org/debian bionic main
+```
+Then execute following commands in your terminal:
+```shell
+wget -O - https://qgis.org/downloads/qgis-2019.gpg.key | gpg --import
+gpg --fingerprint 51F523511C7028C3
+gpg --export --armor 51F523511C7028C3 | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install qgis qgis-plugin-grass
+```
+
+## Prepare Conda Environment
+### Setup Base Environment
+```shell
+cd ~
+conda config
+conda config --add channels defaults
+conda update --all
+conda install geopandas jupyterlab
+```
+### Setup GIS Environment
+```shell
+conda create -n gis python=3.7
+conda activate gis
+
+conda install jupyterlab
+conda install gdal
+
+conda install geopandas matplotlib mapclassify
+conda install -c conda-forge geojson contextily folium mplleaflet osmnx
+conda install pysal rasterio
+conda install dill
+conda install -c conda-forge geoplot rasterstats
+
+pip install urbanaccess pandana
+pip install dash==0.19.0
+pip install dash-renderer==0.11.1
+pip install dash-html-components==0.8.0
+pip install dash-core-components==0.14.0
+pip install plotly --upgrade
+```
+#### Test Environment
+```shell
+python -c 'import gdal; print(dir(gdal))'
+```
+
+### Sources
+- https://github.com/ContinuumIO/anaconda-issues/issues/10351#issuecomment-528378258 
