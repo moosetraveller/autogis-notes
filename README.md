@@ -383,6 +383,7 @@ conda install -c conda-forge geoplot rasterstats
 conda install psycopg2
 conda install sqlalchemy
 conda install -c conda-forge geoalchemy2
+conda install -c conda-forge pandara
 
 pip install urbanaccess pandana
 pip install dash==0.19.0
