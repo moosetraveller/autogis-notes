@@ -189,10 +189,19 @@ Download OSGeo4W Network Installer (64 bit) and install the tools with the Expre
 - https://qgis.org/en/site/forusers/download.html
 
 ## Prepare Conda Environment
+### Build Tools for Visual Studio
+Note: This is required for certain packages.
+
+Download and Install Build Tools for Visual Studio 2019. (Maybe an older version does work too.)
+- Select "C++ build tools"
+
+#### Source
+- https://visualstudio.microsoft.com/downloads
+
 ### Setup Base Environment
 Open the Anaconda Prompt (via Start Menu) and use following commands:
 ```shell
-cd ~
+cd %userprofile%
 conda config
 conda config --add channels defaults
 conda install geopandas jupyterlab
