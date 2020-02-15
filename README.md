@@ -96,7 +96,6 @@ sudo apt-get install qgis qgis-plugin-grass
 cd ~
 conda config
 conda config --add channels defaults
-conda update --all
 conda install geopandas jupyterlab
 ```
 ### Setup GIS Environment
@@ -166,3 +165,31 @@ Download Anaconda 3 from the internet and install Anaconda to `c:\apps\anaconda3
 ### Sources
 - https://www.anaconda.com/distribution
 - https://medium.com/@GalarnykMichael/install-python-on-windows-anaconda-c63c7c3d1444
+
+## Install PyCharm for Anaconda
+Note: You will need a licence for PyCharm. If you are student, sign up for the GitHub Student Pack and get a free Education licence.
+
+Install PyCharm for Anaconda.
+
+### Sources
+- https://www.jetbrains.com/pycharm/promo/anaconda
+- https://education.github.com/pack
+
+## Install R
+Download R 3.6.2 from the internet and install Anaconda to `c:\apps\R-3.6.2`.
+
+### Sources
+- https://cran.r-project.org/bin/windows/base
+
+## Install QGIS
+Download OSGeo4W Network Installer (64 bit) and install the tools with the Express Desktop Install to `c:\apps\OSGeo4W`.
+- Select all packages (QGIS, GDAL, GRASS GIS)
+
+### Sources
+- https://qgis.org/en/site/forusers/download.html
+
+## Prepare Conda Environment
+Open the Anaconda Prompt (via Start Menu) and use following commands:
+```cmd
+
+```
