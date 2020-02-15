@@ -124,6 +124,19 @@ pip install plotly --upgrade
 ```shell
 python -c 'import gdal; print(dir(gdal))'
 ```
+There should be also no error occuring when executing:
+```python
+import geopandas as gpd
+import pysal
+import cartopy
+import geoplot
+import osmnx
+import folium
+import dash
+import rasterio
+import osmnx
+import contextily
+```
 
 ### Sources
 - https://automating-gis-processes.github.io/site/course-info/Installing_Anacondas_GIS.html
