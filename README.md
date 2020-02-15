@@ -209,7 +209,7 @@ Add New Server
 ----
 
 # Setup on Windows
-## Install Python
+## Install Python (optional, there is a Python build delivered with Anaconda)
 Download Python 3.7.6 from the internet and install Python to `c:\apps\python-3.7.6`. 
 - Keep path simple
 - Customize Installation
