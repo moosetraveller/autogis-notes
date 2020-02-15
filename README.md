@@ -1,5 +1,5 @@
-- **Linux:** https://github.com/moosetraveller/gis-test-env#setup-on-linux
-- **Windows:** https://github.com/moosetraveller/gis-test-env#setup-on-windows
+**Linux:** https://github.com/moosetraveller/gis-test-env#setup-on-linux
+**Windows:** https://github.com/moosetraveller/gis-test-env#setup-on-windows
 
 # Setup on Linux
 Note: This tutorial uses an older Ubuntu version. Use this tutorial at your own risk.
