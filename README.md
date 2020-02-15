@@ -229,7 +229,7 @@ pip install plotly --upgrade
 ```
 #### Test Environment
 ```shell
-python -c 'import gdal; print(dir(gdal))'
+python -c "import gdal; print(dir(gdal))"
 ```
 There should be also no error occuring when executing:
 ```python
