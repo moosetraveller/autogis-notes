@@ -120,6 +120,10 @@ conda install pysal rasterio
 conda install dill
 conda install -c conda-forge geoplot rasterstats
 
+conda install psycopg2
+conda install sqlalchemy
+conda install -c conda-forge geoalchemy2
+
 pip install urbanaccess pandana
 pip install dash==0.19.0
 pip install dash-renderer==0.11.1
@@ -143,6 +147,9 @@ import dash
 import rasterio
 import osmnx
 import contextily
+import psycopg2
+import sqlalchemy
+import geoalchemy2
 ```
 
 ### Sources
@@ -244,6 +251,10 @@ conda install pysal rasterio
 conda install dill
 conda install -c conda-forge geoplot rasterstats
 
+conda install psycopg2
+conda install sqlalchemy
+conda install -c conda-forge geoalchemy2
+
 pip install urbanaccess pandana
 pip install dash==0.19.0
 pip install dash-renderer==0.11.1
@@ -253,7 +264,7 @@ pip install plotly --upgrade
 ```
 #### Test Environment
 ```shell
-python -c "import gdal; print(dir(gdal))"
+python -c 'import gdal; print(dir(gdal))'
 ```
 There should be also no error occuring when executing:
 ```python
@@ -267,6 +278,9 @@ import dash
 import rasterio
 import osmnx
 import contextily
+import psycopg2
+import sqlalchemy
+import geoalchemy2
 ```
 
 ### Sources
