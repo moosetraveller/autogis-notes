@@ -162,11 +162,18 @@ sudo apt update
 sudo apt install postgresql postgresql-contrib
 sudo apt-get install postgis
 
-sudo -u postgres createuser gisuser
+sudo -u postgres createuser --interactive -P # username: gisuser, password: gisuser
 sudo -u postgres createdb --encoding=UTF8 --owner=gisuser gis
 sudo -u postgres psql --username=postgres --dbname=gis -c "CREATE EXTENSION postgis;"
 sudo -u postgres psql --username=postgres --dbname=gis -c "CREATE EXTENSION postgis_topology;"
 ```
+
+### Set posgres Password
+```shell
+sudo -u postgres psql
+```
+
+Then type in `\password postgres` and follow prompt. After the password is set close with `\q`.
 
 ### Install pgAdmin4
 ```shell
@@ -176,11 +183,21 @@ echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" 
 sudo apt update
 sudo apt install pgadmin4 pgadmin4-apache2
 ```
+Change to `http://127.0.0.1/pgadmin4` and sign in with your credential you have set during the installation.
+
+Add New Server
+- Name: postgresql-local
+- Description: Local PostgreSQL server
+- Host address: 127.0.0.1
+- Port: 5432
+- Username: postgres
+- Password: <empty> unless you have a password set
 
 ### Sources
 - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
 - https://wiki.openstreetmap.org/wiki/PostGIS/Installation
 - https://computingforgeeks.com/how-to-install-pgadmin-4-on-ubuntu
+- https://stackoverflow.com/a/12721020/42659
 
 # Setup on Windows
 ## Install Python
