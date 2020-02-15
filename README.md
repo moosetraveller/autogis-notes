@@ -141,3 +141,28 @@ import contextily
 ### Sources
 - https://automating-gis-processes.github.io/site/course-info/Installing_Anacondas_GIS.html
 - https://github.com/ContinuumIO/anaconda-issues/issues/10351#issuecomment-528378258 
+
+# Setup on Windows
+## Install Python
+Download Python 3.7.6 from the internet and install Python to `c:\apps\python-3.7.6`. 
+- Keep path simple
+- Customize Installation
+  - Install pip
+  - Install tcl/tk and IDLE
+  - Install py launcher
+- Do not add Python to your `PATH` environment variable
+  - if already set by another application, remove all other Python versions from the `PATH` environment variable
+
+### Sources
+-  https://www.python.org/downloads/release/python-376
+
+## Install Anaconda
+Download Anaconda 3 from the internet and install Anaconda to `c:\apps\anaconda3`.
+- Keep path simple
+- Do not add Python to your `PATH` environment variable
+  - if already set by another application, remove all other Python versions from the `PATH` environment variable
+- Register Anaconda as the system Python 3.7 (not 2.7!)
+
+### Sources
+- https://www.anaconda.com/distribution
+- https://medium.com/@GalarnykMichael/install-python-on-windows-anaconda-c63c7c3d1444
