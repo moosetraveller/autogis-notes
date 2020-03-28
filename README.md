@@ -231,23 +231,6 @@ Download Anaconda 3 from the internet and install Anaconda to `c:\apps\anaconda3
   - if already set by another application, remove all other Python versions from the `PATH` environment variable
 - Register Anaconda as the system Python 3.7 (not 2.7!)
 
-### Create Batch File
-Create a batch file `conda-console.bat` (see below) and start your console with it.
-```
-@echo off
-title Conda Console
-echo --------------------------------------------------------------
-echo Welcome to your Conda Console
-echo --------------------------------------------------------------
-set /p env="Which conda environment do you want to use? "
-set PATH=c:\apps\anaconda3\condabin\;%PATH%
-cd /D %userprofile%
-cmd /K "conda activate %env%"
-```
-
-#### Note
-With this batch file, we avoid setting a `PATH` environment variable globally. Of course, you could do this as well but it will most likely interfere with other applications using Python. Therefore, it is not a good practise to do so. 
-
 ### Sources
 - https://www.anaconda.com/distribution
 - https://medium.com/@GalarnykMichael/install-python-on-windows-anaconda-c63c7c3d1444
@@ -341,6 +324,57 @@ import geoalchemy2
 ### Sources
 - https://automating-gis-processes.github.io/site/course-info/Installing_Anacondas_GIS.html
 - https://github.com/ContinuumIO/anaconda-issues/issues/10351#issuecomment-528378258 
+
+## Portable Conda
+
+1. copy `c:\apps\anaconda3` to your USB stick 
+  - keep same path structure on USB stick, otherwise you'll need to update path in batch file
+2. create `conda-console.bat` (see below) and save it to the USB stick root directory
+3. start your portable conda by double clicking `conda-console.bat`
+
+### Batch File
+```
+@echo off
+title Conda Console
+echo --------------------------------------------------------------
+echo Welcome to your Conda Console
+echo --------------------------------------------------------------
+set /p lw="What's your drive letter? "
+set /p env="Which conda environment do you want to use?"
+set PATH=%lw%:\apps\anaconda3\condabin\;%PATH%
+cd /D %userprofile%
+cmd /K "conda activate %env%"
+```
+
+## Extended Portable Tools
+I recommend to install **git**, **R** and **cygwin** to your USB stick as well. The latter if you like Linux (allows you for example to install `wget`). However, if you install cygwin as well, refrain from installing gdal and other tools which may interfere with your Open Source GIS Python environment!
+
+### Batch File
+Assuming following installation directories:
+
+- git: `c:\apps\git`
+- R: `c:\apps\r`
+- Cygwin: `c:\apps\cygwin`
+
+```
+@echo off
+title Conda Console
+echo --------------------------------------------------------------
+echo Welcome to your Conda Console
+echo --------------------------------------------------------------
+set /p lw="What's your drive letter? "
+set /p env="Which conda environment do you want to use?"
+set PATH=%lw%:\_pps\anaconda3\condabin\;%lw%:\apps\git\;%lw%:\apps\r\bin;%lw%:\apps\cygwin\bin;%PATH%
+doskey _jupyter=echo Jupyter Lab in a separate console started. ^&^& start "Jupyter Lab" jupyter lab
+doskey _r=echo R REPL in a separate console started. ^&^& start "R REPL" r
+doskey _python=echo Python REPL in separate console started. ^&^& start "Python REPL" python
+cd /D %userprofile%
+cmd /K "conda activate %env%"
+```
+
+**Note:** Please note the 3 doskey commands in the batch file. Those aliases allow to start Jupyter Lab, R REPL and Python REPL in separate consoles. 
+
+**Note:** If you have not setup a conda environment before using this batch file, just use *base* environment and setup your environment
 
 ----
 
