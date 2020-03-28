@@ -229,6 +229,23 @@ Download Anaconda 3 from the internet and install Anaconda to `c:\apps\anaconda3
   - if already set by another application, remove all other Python versions from the `PATH` environment variable
 - Register Anaconda as the system Python 3.7 (not 2.7!)
 
+### Create Batch File
+Create a batch file `conda-console.bat` (see below) and start your console with it.
+```
+@echo off
+title Conda Console
+echo --------------------------------------------------------------
+echo Welcome to your Conda Console
+echo --------------------------------------------------------------
+set /p env="Which conda environment do you want to use? "
+set PATH=c:\apps\anaconda3\condabin\;%PATH%
+cd /D %userprofile%
+cmd /K "conda activate %env%"
+```
+
+#### Note
+With this batch file, we avoid setting a `PATH` environment variable globally. Of course, you could do this as well but it will most likely interfere with other applications using Python. Therefore, it is not a good practise to do so. 
+
 ### Sources
 - https://www.anaconda.com/distribution
 - https://medium.com/@GalarnykMichael/install-python-on-windows-anaconda-c63c7c3d1444
