@@ -1,3 +1,5 @@
+**Note: Make sure you have a backup before following this guide. Author is not responsible for data loss.**
+
 ## Setup a GIS Environment on Ubuntu Linux
 - https://github.com/moosetraveller/gis-test-env#setup-on-ubuntu-linux
 
