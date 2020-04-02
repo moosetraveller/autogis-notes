@@ -1,4 +1,4 @@
-**Note:** Make sure you have a backup before following this guide. Author is not responsible for any data loss and loss of time. This workflow worked for me with my own environment and may need to be adjusted for other environments and operating system versions.
+**Note:** Make sure you have a backup before following this guide. Author is not responsible for any data loss and loss of time. This workflow worked for the author with his environment and may need to be adjusted for other environments and operating system versions.
 
 ## Setup a GIS Environment on Ubuntu Linux
 - https://github.com/moosetraveller/gis-test-env#setup-on-ubuntu-linux
