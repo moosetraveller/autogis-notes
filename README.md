@@ -1,7 +1,7 @@
 **Note:** Make sure that you have a backup before following this guide. The author is not responsible for any data loss. This workflow worked for the author's environment and may need some adjustment for other environments and operating system.
 
-## Setup a Geo-Python Environment on Ubuntu 1804
-- https://github.com/moosetraveller/gis-test-env#setup-on-ubuntu-18.04
+## Setup a Geo-Python Environment on Ubuntu 18.04
+- https://github.com/moosetraveller/gis-test-env#setup-on-ubuntu-1804
 
 ## Setup a Geo-Python Environment on Windows:
 - https://github.com/moosetraveller/gis-test-env#setup-on-windows
