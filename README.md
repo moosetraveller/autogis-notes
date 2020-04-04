@@ -1,19 +1,19 @@
 **Note:** Make sure that you have a backup before following this guide. The author is not responsible for any data loss. This workflow worked for the author's environment and may need some adjustment for other environments and operating system.
 
-## Setup a GIS Environment on Ubuntu Linux
-- https://github.com/moosetraveller/gis-test-env#setup-on-ubuntu-linux
+## Setup a Geo-Python Environment on Ubuntu 18.04
+- https://github.com/moosetraveller/gis-test-env#setup-on-ubuntu-18.04
 
-## Setup a GIS Environment on Windows:
+## Setup a Geo-Python Environment on Windows:
 - https://github.com/moosetraveller/gis-test-env#setup-on-windows
 
-## Setup a GIS Environment on Mac OS:
+## Setup a Geo-Python Environment on Mac OS:
 - https://github.com/moosetraveller/gis-test-env#setup-on-macos
 
 ----
 
-# Setup on Ubuntu Linux
+# Setup on Ubuntu 18.04
 Note: This tutorial uses an older Ubuntu version. Use this tutorial at your own risk.
-## Install Ubuntu 18.04
+## Install Ubuntu
 ### Virtual Box
 - https://www.virtualbox.org
 - https://linuxhint.com/install_ubuntu_18-04_virtualbox
@@ -41,7 +41,7 @@ conda --version
 Sources:
 - https://www.anaconda.com/
 
-### Use Anaconda in a ZSH Console
+### Use Anaconda in a ZSH Console (optional)
 Open `~/.zshrc` in a text editor, for example with nano:
 ```shell
 nano ~/.zshrc
@@ -79,7 +79,7 @@ After PyCharm is started, go to  `Tools -> Create Desktop Entry...` to create a 
 - https://askubuntu.com/a/108794
 - https://education.github.com/pack
 
-## Install R
+## Install R (optional)
 ```shell
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
@@ -91,7 +91,7 @@ Test R with: `sudo -i R`.
 ### Sources
 - https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04
 
-## Install QGIS
+## Install QGIS (optional)
 Add following lines to `/etc/apt/sources.list`:
 ```shell
 deb     https://qgis.org/debian bionic main
@@ -165,7 +165,7 @@ import geoalchemy2
 - https://automating-gis-processes.github.io/site/course-info/Installing_Anacondas_GIS.html
 - https://github.com/ContinuumIO/anaconda-issues/issues/10351#issuecomment-528378258 
 
-## Install PosgreSQL/PostGIS
+## Install PosgreSQL/PostGIS (optional)
 ```shell
 sudo apt update
 sudo apt install postgresql postgresql-contrib
@@ -211,19 +211,6 @@ Add New Server
 ----
 
 # Setup on Windows
-## Install Python (optional, there is a Python build delivered with Anaconda)
-Download Python 3.7.6 from the internet and install Python to `c:\apps\python-3.7.6`. 
-- Keep path simple
-- Customize Installation
-  - Install pip
-  - Install tcl/tk and IDLE
-  - Install py launcher
-- Do not add Python to your `PATH` environment variable
-  - if already set by another application, remove all other Python versions from the `PATH` environment variable
-
-### Sources
--  https://www.python.org/downloads/release/python-376
-
 ## Install Anaconda
 Download Anaconda 3 from the internet and install Anaconda to `c:\apps\anaconda3`.
 - Keep path simple
@@ -244,13 +231,13 @@ Install PyCharm for Anaconda.
 - https://www.jetbrains.com/pycharm/promo/anaconda
 - https://education.github.com/pack
 
-## Install R
+## Install R (optional)
 Download R 3.6.2 from the internet and install Anaconda to `c:\apps\R-3.6.2`.
 
 ### Sources
 - https://cran.r-project.org/bin/windows/base
 
-## Install QGIS
+## Install QGIS (optional)
 Download OSGeo4W Network Installer (64 bit) and install the tools with the Express Desktop Install to `c:\apps\OSGeo4W`.
 - Select all packages (QGIS, GDAL, GRASS GIS)
 
@@ -325,7 +312,7 @@ import geoalchemy2
 - https://automating-gis-processes.github.io/site/course-info/Installing_Anacondas_GIS.html
 - https://github.com/ContinuumIO/anaconda-issues/issues/10351#issuecomment-528378258 
 
-## Portable Conda
+## Portable Conda (optional)
 
 1. copy `c:\apps\anaconda3` to your USB stick 
   - keep same path structure on USB stick, otherwise you'll need to update path in batch file
