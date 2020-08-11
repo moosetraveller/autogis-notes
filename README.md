@@ -82,6 +82,7 @@ After PyCharm is started, go to  `Tools -> Create Desktop Entry...` to create a 
 - https://www.jetbrains.com/pycharm/download/other.html
 
 ## Install R (optional)
+### Ubuntu 18.04
 ```shell
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
@@ -121,7 +122,8 @@ sudo apt-get install qgis qgis-plugin-grass
 ### Ubuntu 20.04
 ```shell
 sudo apt install gnupg software-properties-common
-wget -qO - https://qgis.org/downloads/qgis-2020.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
+wget -qO - https://qgis.org/downloads/qgis-2020.gpg.key
+sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
 sudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg
 sudo add-apt-repository "deb https://qgis.org/debian `lsb_release -c -s` main"
 sudo apt update
