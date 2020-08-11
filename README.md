@@ -1,7 +1,7 @@
 **Note:** Make sure that you have a backup before following this guide. The author is not responsible for any data loss. This workflow worked for the author's environment and may need some adjustment for other environments and operating system.
 
-## Setup a Geo-Python Environment on Ubuntu 18.04
-- https://github.com/moosetraveller/gis-test-env#setup-on-ubuntu-1804
+## Setup a Geo-Python Environment on Ubuntu 18.04/20.04
+- https://github.com/moosetraveller/gis-test-env#setup-on-ubuntu-1804-or-2004
 
 ## Setup a Geo-Python Environment on Windows:
 - https://github.com/moosetraveller/gis-test-env#setup-on-windows
@@ -11,7 +11,7 @@
 
 ----
 
-# Setup on Ubuntu 18.04
+# Setup on Ubuntu 18.04 or 20.04
 Note: This tutorial uses an older Ubuntu version. Use this tutorial at your own risk.
 ## Install Ubuntu
 ### Virtual Box
@@ -22,14 +22,15 @@ Note: This tutorial uses an older Ubuntu version. Use this tutorial at your own 
 Note: If you use Parallels on Mac, go to your configuration and disable "Preserve text formatting" in Option/More Options.
 
 ## Install ZSH Console (optional)
-- https://kifarunix.com/how-to-install-and-setup-zsh-and-oh-my-zsh-on-ubuntu-18-04/
+- Ubuntu 18.04: https://kifarunix.com/how-to-install-and-setup-zsh-and-oh-my-zsh-on-ubuntu-18-04/
+- Ubuntu 20.04: https://kifarunix.com/install-and-setup-zsh-and-oh-my-zsh-on-ubuntu-20-04/
 
 ## Install Anaconda
 Change to your console and type:
 ```shell
 cd ~/Downloads
-wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
-bash Anaconda3-2019.10-Linux-x86_64.sh
+wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
+bash Anaconda3-2020.07-Linux-x86_64.sh
 ```
 Follow the instructions and install Anaconda to `~/anaconda3`. If you are asked to initialize Conda do it. After the installation you need to restart your console.
 
@@ -64,12 +65,12 @@ conda --version
 Note: You will need a licence for PyCharm. If you are student, sign up for the GitHub Student Pack and get a free Education licence.
 ```shell
 cd ~/Downloads
-wget https://download.jetbrains.com/python/pycharm-professional-anaconda-2019.3.3.tar.gz
+wget https://download.jetbrains.com/python/pycharm-professional-anaconda-2020.2.tar.gz
 sudo tar xfz pycharm-*.tar.gz -C /opt/
 ```
 Start PyCharm with:
 ```shell
-sh /opt/pycharm-anaconda-2019.3.3/bin/pycharm.sh
+sh /opt/pycharm-anaconda-2020.2/bin/pycharm.sh
 ```
 After PyCharm is started, go to  `Tools -> Create Desktop Entry...` to create a link in your Application list.
 
@@ -78,6 +79,7 @@ After PyCharm is started, go to  `Tools -> Create Desktop Entry...` to create a 
 - https://www.jetbrains.com/help/pycharm/installation-guide.html
 - https://askubuntu.com/a/108794
 - https://education.github.com/pack
+- https://www.jetbrains.com/pycharm/download/other.html
 
 ## Install R (optional)
 ```shell
@@ -88,10 +90,20 @@ sudo apt install r-base
 ```
 Test R with: `sudo -i R`.
 
+### Ubuntu 20.04
+```shell
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
+sudo apt update
+sudo apt install r-base
+```
+
 ### Sources
-- https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04
+- Ubuntu 18.04: https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04
+- Ubuntu 20.04: https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04/
 
 ## Install QGIS (optional)
+### Ubuntu 18.04
 Add following lines to `/etc/apt/sources.list`:
 ```shell
 deb     https://qgis.org/debian bionic main
@@ -105,6 +117,19 @@ gpg --export --armor 51F523511C7028C3 | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install qgis qgis-plugin-grass
 ```
+
+### Ubuntu 20.04
+```shell
+sudo apt install gnupg software-properties-common
+wget -qO - https://qgis.org/downloads/qgis-2020.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
+sudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg
+sudo add-apt-repository "deb https://qgis.org/debian `lsb_release -c -s` main"
+sudo apt update
+sudo apt install qgis qgis-plugin-grass
+```
+
+### Source
+- https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
 
 ## Prepare Conda Environment
 ### Setup Base Environment
