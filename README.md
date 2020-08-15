@@ -235,6 +235,17 @@ Add New Server
 - https://computingforgeeks.com/how-to-install-pgadmin-4-on-ubuntu
 - https://stackoverflow.com/a/12721020/42659
 
+## Install Julia
+```shell
+cd ~/Downloads
+wget https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.0-linux-x86_64.tar.gz
+sudo tar xfz julia-*.tar.gz -C /opt/
+sudo ln -s /opt/julia-1.5.0/bin/julia /usr/local/bin/julia
+```
+
+### Sources
+- https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu
+
 ----
 
 # Setup on Windows
