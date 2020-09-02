@@ -1,4 +1,4 @@
-**Note:** Make sure that you have a backup before following this guide. The author is not responsible for any data loss. This workflow worked for the author's environment and may need some adjustment for other environments and operating system.
+**Note:** Make sure that you have a backup before following this guide. The author is not responsible for any data loss. This workflow worked for the author's environment and may need some adjustment for other environments and operating systems.
 
 ## Setup a Geo-Python Environment on Ubuntu 18.04/20.04
 - https://github.com/moosetraveller/gis-test-env#setup-on-ubuntu-1804-or-2004
